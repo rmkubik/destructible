@@ -6,5 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ryan kubik"
+  "author": "Ryan kubik",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^1.8.1"
+  }
 }
