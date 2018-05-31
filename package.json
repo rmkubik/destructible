@@ -11,8 +11,7 @@
   "author": "Ryan kubik",
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "parcel": "^1.8.1",
+    "parcel-bundler": "^1.8.1",
     "parcel-plugin-clean-dist": "0.0.6"
   }
 }

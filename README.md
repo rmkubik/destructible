@@ -5,6 +5,7 @@
     - gitignore `node_modules`
 - Parcel
     - Default to index.js and index.html
+    - Use `parcel-bundler` instead of `parcel`
     - gitignore `dist` and `.cache`
     - Use `parcel-plugin-clean-dist` to clean `dist` before each new build
         - https://github.com/parcel-bundler/parcel/issues/1234
