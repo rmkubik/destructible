@@ -7,4 +7,5 @@
     - Default to index.js and index.html
     - gitignore `dist` and `.cache`
     - Use `parcel-plugin-clean-dist` to clean `dist` before each new build
+        - https://github.com/parcel-bundler/parcel/issues/1234
     - `package.json` and `dev` and `build` commands
