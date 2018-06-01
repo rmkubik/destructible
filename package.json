@@ -8,7 +8,7 @@
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ryan kubik",
+  "author": "Ryan Kubik",
   "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.8.1",
