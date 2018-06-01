@@ -17,3 +17,4 @@
     - Create `.eslintrc` with `{ "extends": "airbnb-base" }`
     - Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
     - Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to account for h needing to be defined in `index.js`
+    - Add `"env": { "browser": true }` to `.eslintrc` to allow `document`, `window`, and other web specific properties

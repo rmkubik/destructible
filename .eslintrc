@@ -6,6 +6,9 @@
         }
     },
     "rules": {
-        "no-unused-vars": [2, { "varsIgnorePattern": "h" }],
+        "no-unused-vars": [2, { "varsIgnorePattern": "h" }]
+    },
+    "env": {
+        "browser": true
     }
 }
