@@ -31,3 +31,8 @@
 - File Structure
     - Create a `src` (source) directory
     - Create `js` and `css` subdirectories under `src`
+    - Root files `index.html` and `index.js` are in main directory
+- Jest
+    - Tests belong in the `tests` root directory
+    - Install `jest` because its a preconfigured and popular solution
+    - Add `"jest": true` to the eslint `"env"` property in `.eslintrc`

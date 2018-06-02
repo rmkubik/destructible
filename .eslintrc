@@ -12,6 +12,7 @@
         "no-unused-vars": [2, { "varsIgnorePattern": "h" }]
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jest": true
     }
 }
