@@ -1,5 +1,7 @@
 import { h, app } from 'hyperapp';
 
+import './src/css/main.scss';
+
 const initialState = {
   count: 0,
 };

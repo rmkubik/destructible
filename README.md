@@ -18,6 +18,10 @@
     - Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
     - Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to account for h needing to be defined in `index.js`
     - Add `"env": { "browser": true }` to `.eslintrc` to allow `document`, `window`, and other web specific properties
-- Reset CSS
-    - Get rid of browser specific styling CSS for a clean starting point
-    
+- CSS
+    - `reset-css`: Get rid of browser specific styling CSS for a clean starting point
+    - `node-sass`: To compile SASS for Parcel
+    - `src/css/main.scss` is there to import Reset CSS
+- File Structure
+    - Create a `src` (source) directory
+    - Create `js` and `css` subdirectories under `src`
