@@ -14,10 +14,16 @@
     - Atom `fast-eslint` plugin
     - Install `eslint`
     - Need `eslint-config-airbnb-base` and `eslint-plugin-import` because they are peer dependencies
-    - Create `.eslintrc` with `{ "extends": "airbnb-base" }`
+    - Create `.eslintrc` with `{ "extends": ["airbnb-base"] }`
     - Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
     - Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to account for h needing to be defined in `index.js`
     - Add `"env": { "browser": true }` to `.eslintrc` to allow `document`, `window`, and other web specific properties
+- Prettier
+    - Auto format code in an opinionated way
+    - Install using exact version (with npm --save-exact) per Prettier's recommendation "we introduce stylistic changes in patch releases"
+    - Add `"prettier"` to `.eslintrc` "extends" property
+    - npm install `prettier`
+    - npm install both `eslint-plugin-prettier` and `eslint-config-prettier` to integrate prettier with eslint. The plugin allows eslint to run prettier and the config is an eslint compatible set of overrides provided by prettier.
 - CSS
     - `reset-css`: Get rid of browser specific styling CSS for a clean starting point
     - `node-sass`: To compile SASS for Parcel
