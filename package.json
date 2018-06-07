@@ -11,6 +11,7 @@
   "author": "Ryan Kubik",
   "dependencies": {
     "hyperapp": "^1.2.6",
+    "phaser": "^3.9.0",
     "reset-css": "^3.0.0"
   },
   "devDependencies": {

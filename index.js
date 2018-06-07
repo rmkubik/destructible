@@ -1,4 +1,5 @@
 import { h, app } from "hyperapp";
+import "phaser";
 
 import "./src/css/main.scss";
 
