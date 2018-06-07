@@ -32,6 +32,7 @@
 -   Add `"prettier"` to `.eslintrc` "extends" property
 -   npm install `prettier`
 -   npm install both `eslint-plugin-prettier` and `eslint-config-prettier` to integrate prettier with eslint. The plugin allows eslint to run prettier and the config is an eslint compatible set of overrides provided by prettier.
+-   Enable running prettier on file save in your editor
 
 ### CSS
 
