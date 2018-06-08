@@ -29,10 +29,13 @@
 
 -   Auto format code in an opinionated way
 -   Install using exact version (with npm --save-exact) per Prettier's recommendation "we introduce stylistic changes in patch releases"
--   Add `"prettier"` to `.eslintrc` "extends" property
 -   npm install `prettier`
--   npm install both `eslint-plugin-prettier` and `eslint-config-prettier` to integrate prettier with eslint. The plugin allows eslint to run prettier and the config is an eslint compatible set of overrides provided by prettier.
+-   npm install `eslint-plugin-prettier`
+-   Add `"prettier"` to `.eslintrc` "plugins" property, this allows integration between prettier and eslint
+-   npm install `eslint-config-prettier`
+-   Add `"prettier"` to `.eslintrc` "extends" property, this allows prettier to override existing settings with its own set of defaults
 -   Enable running prettier on file save in your editor
+    -   Atom `prettier` plugin, enable `ESLint Integration` setting
 
 ### CSS
 

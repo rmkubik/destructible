@@ -8,11 +8,21 @@
             "jsx": true
         }
     },
+    "plugins": [
+        "prettier"
+    ],
     "rules": {
-        "no-unused-vars": [2, { "varsIgnorePattern": "h" }]
+        "no-unused-vars": [2, { "varsIgnorePattern": "h" }],
+        "prettier/prettier": [
+          "error",
+          {
+            singleQuote: true,
+            trailingComma: "all"
+          }
+        ]
     },
     "env": {
         "browser": true,
         "jest": true
-    }
+    },
 }
