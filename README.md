@@ -21,8 +21,6 @@
 -   Install `eslint`
 -   Need `eslint-config-airbnb-base` and `eslint-plugin-import` because they are peer dependencies
 -   Create `.eslintrc` with `{ "extends": ["airbnb-base"] }`
--   Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
--   Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to account for h needing to be defined in `index.js`
 -   Add `"env": { "browser": true }` to `.eslintrc` to allow `document`, `window`, and other web specific properties
 
 ### Prettier
@@ -54,3 +52,13 @@
 -   Tests belong in the `tests` root directory
 -   Install `jest` because its a preconfigured and popular solution
 -   Add `"jest": true` to the eslint `"env"` property in `.eslintrc`
+
+### Phaser
+
+-   npm install `phaser`
+
+### Hyperapp
+
+-   npm install `hyperapp`
+-   Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
+-   Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to `.eslintrc` to account for h needing to be defined in `index.js` but not used in code
