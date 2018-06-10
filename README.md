@@ -15,6 +15,11 @@
     -   https://github.com/parcel-bundler/parcel/issues/1234
 -   `package.json` and `dev` and `build` commands
 
+### Babel
+
+-   Create `.babelrc` file to allow babel plugins to enable experimental esnext features.
+-   Add `plugins: ['transform-object-rest-spread']` to `.babelrc`
+
 ### ESLint
 
 -   Atom `fast-eslint` plugin
