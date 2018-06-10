@@ -20,6 +20,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "node-sass": "^4.9.0",
     "parcel-bundler": "^1.8.1",

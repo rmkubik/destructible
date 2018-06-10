@@ -62,3 +62,6 @@
 -   npm install `hyperapp`
 -   Add `"parserOptions": { "ecmaFeatures": { "jsx": true } }` to `.eslintrc` to support JSX
 -   Add `"no-unused-vars": [2, { "varsIgnorePattern": "h" }],` to `.eslintrc` to account for h needing to be defined in `index.js` but not used in code
+-   npm install `eslint-plugin-react` to use React specific linting rules (Hyperapp works well with these rules too)
+-   Add `react` to `"plugins"` in `.eslintrc`
+-   Add `"react/jsx-uses-vars": "error"` to `"rules"` in `.eslintrc` to prevent eslint from thinking JSX components are unused

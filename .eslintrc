@@ -9,7 +9,8 @@
         }
     },
     "plugins": [
-        "prettier"
+        "prettier",
+        "react"
     ],
     "rules": {
         "no-unused-vars": [2, { "varsIgnorePattern": "h" }],
@@ -19,7 +20,8 @@
             singleQuote: true,
             trailingComma: "all"
           }
-        ]
+        ],
+        "react/jsx-uses-vars": "error"
     },
     "env": {
         "browser": true,
