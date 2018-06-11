@@ -50,6 +50,13 @@
 
 -   Create a `src` (source) directory
 -   Create `js` and `css` subdirectories under `src`
+-   `js` subdirectories: actions, components, game, state
+    -   actions: contains hyperapp action functions
+    -   state: contains hyperapp initial global state
+    -   game: contains phaser or game logic related classes
+    -   components: contains hyperapp related components and gui elements
+-   `css` directory contains `components` subdirectory with a corresponding sass file for each hyperapp component requiring styling
+    -   main.scss is for all generic top level styling
 -   Root files `index.html` and `index.js` are in main directory
 
 ### Jest
