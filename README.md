@@ -58,6 +58,8 @@
 -   `css` directory contains `components` subdirectory with a corresponding sass file for each hyperapp component requiring styling
     -   main.scss is for all generic top level styling
 -   Root files `index.html` and `index.js` are in main directory
+-   `assets` directory for audio, images, etc.
+    -   images: contains image assets
 
 ### Jest
 
