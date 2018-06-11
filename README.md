@@ -45,6 +45,7 @@
 -   `reset-css`: Get rid of browser specific styling CSS for a clean starting point
 -   `node-sass`: To compile SASS for Parcel
 -   `src/css/main.scss` is there to import Reset CSS
+-   Default to using `box-sizing` `border-box` instead of `content-box`
 
 ### File Structure
 
