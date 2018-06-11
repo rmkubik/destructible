@@ -1,31 +1,31 @@
 {
-  "name": "phaser-hyperapp-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Ryan Kubik",
-  "dependencies": {
-    "hyperapp": "^1.2.6",
-    "phaser": "^3.9.0",
-    "reset-css": "^3.0.0"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.9.1",
-    "jest": "^23.1.0",
-    "node-sass": "^4.9.0",
-    "parcel-bundler": "^1.8.1",
-    "parcel-plugin-clean-dist": "0.0.6",
-    "prettier": "1.13.4"
-  }
+    "name": "phaser-hyperapp-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "jest --coverage --no-cache"
+    },
+    "author": "Ryan Kubik",
+    "dependencies": {
+        "hyperapp": "^1.2.6",
+        "phaser": "^3.9.0",
+        "reset-css": "^3.0.0"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-react": "^7.9.1",
+        "jest": "^23.1.0",
+        "node-sass": "^4.9.0",
+        "parcel-bundler": "^1.8.1",
+        "parcel-plugin-clean-dist": "0.0.6",
+        "prettier": "1.13.4"
+    }
 }
