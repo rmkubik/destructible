@@ -1,9 +1,12 @@
 import Phaser from 'phaser';
 
 import config from './Config';
+import Player from './Player';
 
 import characters from '../../../assets/images/spritesheet_characters.png';
 import charactersAtlas from '../../../assets/images/spritesheet_characters.xml';
+import tiles from '../../../assets/images/spritesheet_tiles.png';
+import map1 from '../../../assets/images/map1.json';
 
 class Game {
   constructor() {
@@ -19,14 +22,26 @@ class Game {
 
   preload() {
     this.load.atlasXML('characters', characters, charactersAtlas);
+    this.load.spritesheet('tiles', tiles, {
+      frameWidth: 64,
+      frameHeight: 64,
+      spacing: 10,
+    });
+    this.load.tilemapTiledJSON('map', map1);
   }
 
   create() {
-    const char = this.add.image(0, 0, 'characters', 0);
-    char.setPosition(char.width / 2, char.height / 2);
+    this.map = this.make.tilemap({ key: 'map' });
+    const tileset = this.map.addTilesetImage('spritesheet_tiles', 'tiles');
+    this.map.createStaticLayer('terrain', tileset, 0, 0);
+    this.map.createStaticLayer('scenery', tileset, 0, 0);
+
+    this.char = new Player(this, { x: 0, y: 0 });
   }
 
-  static update() {}
+  static update() {
+    this.char.update();
+  }
 }
 
 export default Game;
