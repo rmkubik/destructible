@@ -2,7 +2,8 @@ import Phaser from 'phaser';
 
 import config from './Config';
 
-import phaserLogo from '../../../assets/images/phaser_logo.png';
+import characters from '../../../assets/images/spritesheet_characters.png';
+import charactersAtlas from '../../../assets/images/spritesheet_characters.xml';
 
 class Game {
   constructor() {
@@ -17,13 +18,12 @@ class Game {
   }
 
   preload() {
-    this.load.image('phaserLogo', phaserLogo);
+    this.load.atlasXML('characters', characters, charactersAtlas);
   }
 
   create() {
-    const logo = this.add.image(0, 0, 'phaserLogo');
-    logo.setPosition((0.15 * logo.width) / 2, (0.15 * logo.height) / 2);
-    logo.setScale(0.15);
+    const char = this.add.image(0, 0, 'characters', 0);
+    char.setPosition(char.width / 2, char.height / 2);
   }
 
   static update() {}
