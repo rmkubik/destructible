@@ -1,15 +1,12 @@
 import Phaser from 'phaser';
 
-class Player {
-  constructor(scene, position) {
-    this.sprite = scene.add.sprite(
-      position.x,
-      position.y,
-      'characters',
-      'survivor1_stand.png',
-    );
+class Player extends Phaser.GameObjects.Sprite {
+  constructor({ scene, position }) {
+    super(scene, position.x, position.y, 'characters', 'survivor1_stand.png');
+    scene.physics.world.enable(this);
+    scene.add.existing(this);
 
-    this.sprite.setPosition(this.sprite.width / 2, this.sprite.height / 2);
+    this.setPosition(this.width / 2, this.height / 2);
 
     this.wKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -19,16 +16,16 @@ class Player {
 
   update() {
     if (this.wKey.isDown) {
-      this.sprite.y -= 5;
+      this.y -= 5;
     }
     if (this.aKey.isDown) {
-      this.sprite.x -= 5;
+      this.x -= 5;
     }
     if (this.sKey.isDown) {
-      this.sprite.y += 5;
+      this.y += 5;
     }
     if (this.dKey.isDown) {
-      this.sprite.x += 5;
+      this.x += 5;
     }
   }
 }

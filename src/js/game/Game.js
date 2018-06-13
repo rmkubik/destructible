@@ -36,7 +36,7 @@ class Game {
     this.map.createStaticLayer('terrain', tileset, 0, 0);
     this.map.createStaticLayer('scenery', tileset, 0, 0);
 
-    this.char = new Player(this, { x: 0, y: 0 });
+    this.char = new Player({ scene: this, position: { x: 0, y: 0 } });
   }
 
   static update() {
