@@ -31,10 +31,27 @@ class Game {
   }
 
   create() {
-    this.map = this.make.tilemap({ key: 'map' });
-    const tileset = this.map.addTilesetImage('spritesheet_tiles', 'tiles');
-    this.map.createStaticLayer('terrain', tileset, 0, 0);
-    this.map.createStaticLayer('scenery', tileset, 0, 0);
+    const tileList = [0, 1, 2, 3];
+    const mapData = [];
+
+    for (let y = 0; y < 12; y += 1) {
+      const row = [];
+      for (let x = 0; x < 12; x += 1) {
+        //  Scatter the tiles so we get more mud and less stones
+        const tileIndex = Phaser.Math.RND.weightedPick(tileList);
+        row.push(tileIndex);
+      }
+      mapData.push(row);
+    }
+
+    this.map = this.make.tilemap({
+      data: mapData,
+      tileWidth: 64,
+      tileHeight: 64,
+      tileSpacing: 10,
+    });
+    const tileset = this.map.addTilesetImage('tiles', 'tiles', 64, 64, 0, 10);
+    const layer = this.map.createDynamicLayer(0, tileset, 0, 0);
 
     this.char = new Player({ scene: this, position: { x: 0, y: 0 } });
   }
