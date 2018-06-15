@@ -12,6 +12,7 @@ class Player extends Phaser.GameObjects.Sprite {
     this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     this.sKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.dKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    scene.input.keyboard.on('keydown_SPACE', () => this.placeBlock(scene));
   }
 
   update() {
@@ -27,6 +28,14 @@ class Player extends Phaser.GameObjects.Sprite {
     if (this.dKey.isDown) {
       this.x += 5;
     }
+  }
+
+  placeBlock(scene) {
+    scene.terrain.putTileAt(
+      204,
+      Math.floor(this.x / 64),
+      Math.floor(this.y / 64),
+    );
   }
 }
 

@@ -51,7 +51,8 @@ class Game {
       tileSpacing: 10,
     });
     const tileset = this.map.addTilesetImage('tiles', 'tiles', 64, 64, 0, 10);
-    const layer = this.map.createDynamicLayer(0, tileset, 0, 0);
+    const ground = this.map.createDynamicLayer(0, tileset, 0, 0);
+    this.terrain = this.map.createBlankDynamicLayer(1, tileset);
 
     this.char = new Player({ scene: this, position: { x: 0, y: 0 } });
   }
