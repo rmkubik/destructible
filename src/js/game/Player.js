@@ -8,11 +8,18 @@ class Player extends Phaser.GameObjects.Sprite {
 
     this.setPosition(this.width / 2, this.height / 2);
 
-    this.wKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-    this.aKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    this.sKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-    this.dKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    scene.input.keyboard.on('keydown_SPACE', () => this.placeBlock(scene));
+    this.wKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+    this.aKey = scene.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.LEFT,
+    );
+    this.sKey = scene.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.DOWN,
+    );
+    this.dKey = scene.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.RIGHT,
+    );
+    scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene));
+    scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene));
 
     scene.terrain.setCollision([204]);
     scene.physics.add.collider(this, scene.terrain, () => {
@@ -67,6 +74,20 @@ class Player extends Phaser.GameObjects.Sprite {
 
     scene.terrain.putTileAt(
       204,
+      currentTile.x + this.direction.x,
+      currentTile.y + this.direction.y,
+    );
+  }
+
+  deleteBlock(scene) {
+    const tileSize = 64;
+    const currentTile = Player.convertPixelsToTile(
+      { x: this.x, y: this.y },
+      tileSize,
+    );
+
+    scene.terrain.putTileAt(
+      -1,
       currentTile.x + this.direction.x,
       currentTile.y + this.direction.y,
     );
