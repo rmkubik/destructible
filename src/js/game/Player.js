@@ -35,6 +35,13 @@ class Player extends Phaser.GameObjects.Sprite {
     if (this.dKey.isDown) {
       this.body.setVelocityX(200);
     }
+
+    this.angle = Player.convertVelocityToAngle(this.body.velocity);
+  }
+
+  static convertVelocityToAngle(velocity) {
+    const { x, y } = velocity;
+    return Math.atan2(x, y) * (180 / Math.PI);
   }
 
   placeBlock(scene) {
