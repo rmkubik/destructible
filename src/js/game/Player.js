@@ -24,23 +24,24 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   update() {
-    this.direction = { x: 0, y: 0 };
+    const direction = { x: 0, y: 0 };
     this.body.setVelocity(0);
 
     if (this.wKey.isDown) {
-      this.direction.y = -1;
+      direction.y = -1;
     }
     if (this.aKey.isDown) {
-      this.direction.x = -1;
+      direction.x = -1;
     }
     if (this.sKey.isDown) {
-      this.direction.y = 1;
+      direction.y = 1;
     }
     if (this.dKey.isDown) {
-      this.direction.x = 1;
+      direction.x = 1;
     }
 
-    if (this.direction.x !== 0 || this.direction.y !== 0) {
+    if (direction.x !== 0 || direction.y !== 0) {
+      this.direction = direction;
       this.angle = Player.convertVelocityToAngle(this.direction);
 
       this.body.setVelocityX(
@@ -58,11 +59,25 @@ class Player extends Phaser.GameObjects.Sprite {
   }
 
   placeBlock(scene) {
+    const tileSize = 64;
+    const currentTile = Player.convertPixelsToTile(
+      { x: this.x, y: this.y },
+      tileSize,
+    );
+
     scene.terrain.putTileAt(
       204,
-      Math.floor(this.x / 64),
-      Math.floor(this.y / 64),
+      currentTile.x + this.direction.x,
+      currentTile.y + this.direction.y,
     );
+  }
+
+  static convertPixelsToTile(position, tileSize) {
+    const { x, y } = position;
+    return {
+      x: Math.floor(x / tileSize),
+      y: Math.floor(y / tileSize),
+    };
   }
 }
 
