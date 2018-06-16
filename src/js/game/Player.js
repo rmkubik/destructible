@@ -18,25 +18,38 @@ class Player extends Phaser.GameObjects.Sprite {
     scene.physics.add.collider(this, scene.terrain, () => {
       console.log('collided with terrain layer');
     });
+
+    this.direction = { x: 0, y: 0 };
+    this.speed = 200;
   }
 
   update() {
+    this.direction = { x: 0, y: 0 };
     this.body.setVelocity(0);
 
     if (this.wKey.isDown) {
-      this.body.setVelocityY(-200);
+      this.direction.y = -1;
     }
     if (this.aKey.isDown) {
-      this.body.setVelocityX(-200);
+      this.direction.x = -1;
     }
     if (this.sKey.isDown) {
-      this.body.setVelocityY(200);
+      this.direction.y = 1;
     }
     if (this.dKey.isDown) {
-      this.body.setVelocityX(200);
+      this.direction.x = 1;
     }
 
-    this.angle = Player.convertVelocityToAngle(this.body.velocity);
+    if (this.direction.x !== 0 || this.direction.y !== 0) {
+      this.angle = Player.convertVelocityToAngle(this.direction);
+
+      this.body.setVelocityX(
+        this.speed * Math.cos(this.angle / (180 / Math.PI)),
+      );
+      this.body.setVelocityY(
+        this.speed * Math.sin(this.angle / (180 / Math.PI)),
+      );
+    }
   }
 
   static convertVelocityToAngle(velocity) {
