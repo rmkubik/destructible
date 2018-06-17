@@ -18,11 +18,11 @@ class Player extends Phaser.GameObjects.Sprite {
     this.dKey = scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.RIGHT,
     );
-    scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene));
-    scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene));
+    scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
+    scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
-    scene.terrain.setCollision([204]);
-    scene.physics.add.collider(this, scene.terrain);
+    scene.map.terrain.setCollision([204]);
+    scene.physics.add.collider(this, scene.map.terrain);
 
     this.direction = { x: 0, y: 0 };
     this.speed = 200;
@@ -63,28 +63,28 @@ class Player extends Phaser.GameObjects.Sprite {
     return Math.atan2(y, x) * (180 / Math.PI);
   }
 
-  placeBlock(scene) {
+  placeBlock(map) {
     const tileSize = 64;
     const currentTile = Player.convertPixelsToTile(
       { x: this.x, y: this.y },
       tileSize,
     );
 
-    scene.terrain.putTileAt(
+    map.terrain.putTileAt(
       204,
       currentTile.x + this.direction.x,
       currentTile.y + this.direction.y,
     );
   }
 
-  deleteBlock(scene) {
+  deleteBlock(map) {
     const tileSize = 64;
     const currentTile = Player.convertPixelsToTile(
       { x: this.x, y: this.y },
       tileSize,
     );
 
-    scene.terrain.putTileAt(
+    map.terrain.putTileAt(
       -1,
       currentTile.x + this.direction.x,
       currentTile.y + this.direction.y,
