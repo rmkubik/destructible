@@ -22,9 +22,7 @@ class Player extends Phaser.GameObjects.Sprite {
     scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene));
 
     scene.terrain.setCollision([204]);
-    scene.physics.add.collider(this, scene.terrain, () => {
-      console.log('collided with terrain layer');
-    });
+    scene.physics.add.collider(this, scene.terrain);
 
     this.direction = { x: 0, y: 0 };
     this.speed = 200;
