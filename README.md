@@ -13,7 +13,9 @@
 -   gitignore `dist` and `.cache`
 -   Use `parcel-plugin-clean-dist` to clean `dist` before each new build
     -   https://github.com/parcel-bundler/parcel/issues/1234
--   `package.json` and `dev` and `build` commands
+-   `package.json` and `start` and `build` commands
+    -   `start` specifies the entry index file
+    -   `build` specifies the target build directory as well as the entry file
 
 ### Babel
 
@@ -67,6 +69,20 @@
 -   Tests belong in the `tests` root directory
 -   Install `jest` because its a preconfigured and popular solution
 -   Add `"jest": true` to the eslint `"env"` property in `.eslintrc`
+-   update `.babelrc` to work for jest without using Parcel
+    -   Add the plugin `['transform-react-jsx', { pragma: 'h' }]` to allow babel to handle JSX
+    -   Add `presets: ['env']` to use default babel presets
+    -   https://github.com/selfup/hyperapp-one/blob/master/.babelrc
+-   mock non JavaScript modules (images, css, xml, etc.)
+    -   Add a `__mocks__` directory to the root level of the project
+    -   Create two files to mock CSS and other files
+    -   https://facebook.github.io/jest/docs/en/webpack.html
+-   Install `jest-canvas-mock` so that Phaser's canvas can be mocked correctly
+-   Modify `package.json`
+    -   Add `test` script with `--watch` to keep tests running
+    -   Create `jest` object to configure jest
+        -   Add `"setupFiles": [ "jest-canvas-mock" ]` to tell jest to use the canvas mock
+        -   Add `moduleNameMapper` configuration to mock non JS modules with the new mock files
 
 ### Phaser
 
