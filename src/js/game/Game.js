@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import config from './Config';
 
 import phaserLogo from '../../../assets/images/phaser_logo.png';
+import characters from '../../../assets/images/spritesheet_characters.png';
 
 class Game {
   constructor() {
@@ -17,13 +18,16 @@ class Game {
   }
 
   preload() {
-    this.load.image('phaserLogo', phaserLogo);
+    this.load.spritesheet('characters', characters, {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
   }
 
   create() {
-    const logo = this.add.image(0, 0, 'phaserLogo');
-    logo.setPosition((0.15 * logo.width) / 2, (0.15 * logo.height) / 2);
-    logo.setScale(0.15);
+    const char = this.add.image(0, 0, 'characters', 0);
+    char.setPosition((0.15 * char.width) / 2, (0.15 * char.height) / 2);
+    char.setScale(0.15);
   }
 
   static update() {}

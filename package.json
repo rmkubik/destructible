@@ -6,7 +6,7 @@
     "scripts": {
         "start": "parcel index.html",
         "build": "parcel build index.html",
-        "test": "jest --coverage --no-cache"
+        "test": "jest --watch"
     },
     "author": "Ryan Kubik",
     "dependencies": {
@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
         "eslint": "^4.19.1",
         "eslint-config-airbnb-base": "^12.1.0",
         "eslint-config-prettier": "^2.9.0",
@@ -23,9 +24,19 @@
         "eslint-plugin-prettier": "^2.6.0",
         "eslint-plugin-react": "^7.9.1",
         "jest": "^23.1.0",
+        "jest-canvas-mock": "^1.0.3",
         "node-sass": "^4.9.0",
         "parcel-bundler": "^1.8.1",
         "parcel-plugin-clean-dist": "0.0.6",
         "prettier": "1.13.4"
+    },
+    "jest": {
+        "setupFiles": [
+            "jest-canvas-mock"
+        ],
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|xml)$": "<rootDir>/__mocks__/fileMock.js",
+            "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+        }
     }
 }
