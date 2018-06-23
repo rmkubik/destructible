@@ -21,7 +21,7 @@ class Player extends Phaser.GameObjects.Sprite {
     scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
     scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
-    scene.map.terrain.setCollision([204]);
+    // scene.map.terrain.setCollision([204]);
     scene.physics.add.collider(this, scene.map.terrain);
 
     this.direction = { x: 0, y: 0 };

@@ -17,6 +17,8 @@ class Map {
     this.ground = this.map.createDynamicLayer(0, tileset, 0, 0);
     this.terrain = this.map.createBlankDynamicLayer(1, tileset);
 
+    this.terrain.setCollision([204]);
+
     this.growGrass();
     this.growGrass();
     this.growGrass();
