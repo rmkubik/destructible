@@ -80,6 +80,28 @@ class Mob extends Prefab {
     this.state.transition('following');
   }
 
+  getDirectionToward(position) {
+    const direction = {};
+
+    if (position.x < this.x) {
+      direction.x = -1;
+    } else if (position.x > this.x) {
+      direction.x = 1;
+    } else {
+      direction.x = 0;
+    }
+
+    if (position.y < this.y) {
+      direction.y = -1;
+    } else if (position.y > this.y) {
+      direction.y = 1;
+    } else {
+      direction.y = 0;
+    }
+
+    return direction;
+  }
+
   moveInDirection(direction) {
     this.direction = direction;
     const angle = Prefab.convertVelocityToAngle(direction);
