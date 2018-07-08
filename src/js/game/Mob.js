@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import fsm from './fsm';
+
 class Mob extends Phaser.GameObjects.Sprite {
   constructor({ scene, position, sprite }) {
     super(scene, position.x, position.y, 'animals', `${sprite}.png`);
@@ -24,6 +26,18 @@ class Mob extends Phaser.GameObjects.Sprite {
 
     this.body.setCollideWorldBounds(true);
     this.body.setBounce(1, 1);
+
+    this.state = fsm(
+      {
+        unmoving: {
+          wander: () => {},
+        },
+        wandering: {
+          stop: () => {},
+        },
+      },
+      'unmoving',
+    );
   }
 
   update() {}
