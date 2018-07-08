@@ -13,10 +13,7 @@ class Mob extends Phaser.GameObjects.Sprite {
 
     scene.physics.add.collider(this, scene.map.terrain);
 
-    this.direction = {
-      x: Phaser.Math.RND.pick([-1, 0, 1]),
-      y: Phaser.Math.RND.pick([-1, 0, 1]),
-    };
+    this.direction = Mob.pickRandomDirection();
     this.speed = 100;
 
     const angle = Mob.convertVelocityToAngle(this.direction);
@@ -41,6 +38,13 @@ class Mob extends Phaser.GameObjects.Sprite {
   }
 
   update() {}
+
+  static pickRandomDirection() {
+    return {
+      x: Phaser.Math.RND.pick([-1, 0, 1]),
+      y: Phaser.Math.RND.pick([-1, 0, 1]),
+    };
+  }
 
   static convertVelocityToAngle(velocity) {
     const { x, y } = velocity;
