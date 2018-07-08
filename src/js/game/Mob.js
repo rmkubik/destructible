@@ -51,13 +51,10 @@ class Mob extends Prefab {
   }
 
   update() {
+    const { player } = this.scene;
     if (
-      Phaser.Math.Distance.Between(
-        this.scene.player.x,
-        this.scene.player.y,
-        this.x,
-        this.y,
-      ) <= this.followRadius
+      Phaser.Math.Distance.Between(player.x, player.y, this.x, this.y) <=
+      this.followRadius
     ) {
       this.state.action('playerNear');
     } else {
@@ -67,7 +64,12 @@ class Mob extends Prefab {
     if (this.state.currentState === 'unmoving') {
       this.state.action('wander');
     } else if (this.state.currentState === 'following') {
-      this.moveInDirection(Mob.pickRandomDirection());
+      this.moveInDirection(
+        this.getDirectionToward({
+          x: player.x,
+          y: player.y,
+        }),
+      );
     }
   }
 
