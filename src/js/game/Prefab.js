@@ -9,6 +9,19 @@ class Prefab extends Phaser.GameObjects.Sprite {
 
     this.setPosition(this.width / 2, this.height / 2);
   }
+
+  static convertVelocityToAngle(velocity) {
+    const { x, y } = velocity;
+    return Math.atan2(y, x) * (180 / Math.PI);
+  }
+
+  static convertPixelsToTile(position, tileSize) {
+    const { x, y } = position;
+    return {
+      x: Math.floor(x / tileSize),
+      y: Math.floor(y / tileSize),
+    };
+  }
 }
 
 export default Prefab;

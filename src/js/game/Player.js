@@ -50,7 +50,7 @@ class Player extends Prefab {
 
     if (direction.x !== 0 || direction.y !== 0) {
       this.direction = direction;
-      this.angle = Player.convertVelocityToAngle(this.direction);
+      this.angle = Prefab.convertVelocityToAngle(this.direction);
 
       this.body.setVelocityX(
         this.speed * Math.cos(this.angle / (180 / Math.PI)),
@@ -61,14 +61,9 @@ class Player extends Prefab {
     }
   }
 
-  static convertVelocityToAngle(velocity) {
-    const { x, y } = velocity;
-    return Math.atan2(y, x) * (180 / Math.PI);
-  }
-
   placeBlock(map) {
     const tileSize = 64;
-    const currentTile = Player.convertPixelsToTile(
+    const currentTile = Prefab.convertPixelsToTile(
       { x: this.x, y: this.y },
       tileSize,
     );
@@ -82,7 +77,7 @@ class Player extends Prefab {
 
   deleteBlock(map) {
     const tileSize = 64;
-    const currentTile = Player.convertPixelsToTile(
+    const currentTile = Prefab.convertPixelsToTile(
       { x: this.x, y: this.y },
       tileSize,
     );
@@ -92,14 +87,6 @@ class Player extends Prefab {
       currentTile.x + this.direction.x,
       currentTile.y + this.direction.y,
     );
-  }
-
-  static convertPixelsToTile(position, tileSize) {
-    const { x, y } = position;
-    return {
-      x: Math.floor(x / tileSize),
-      y: Math.floor(y / tileSize),
-    };
   }
 }
 
