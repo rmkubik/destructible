@@ -37,6 +37,9 @@ class Game {
 
   create() {
     this.map = new Map(this);
+    this.objects = this.add.group({
+      runChildUpdate: true,
+    });
 
     this.char = new Player({ scene: this, position: { x: 0, y: 0 } });
 
@@ -62,9 +65,7 @@ class Game {
     });
   }
 
-  static update() {
-    this.char.update();
-  }
+  static update() {}
 }
 
 export default Game;

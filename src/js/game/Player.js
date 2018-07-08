@@ -1,12 +1,15 @@
 import Phaser from 'phaser';
 
-class Player extends Phaser.GameObjects.Sprite {
-  constructor({ scene, position }) {
-    super(scene, position.x, position.y, 'characters', 'survivor1_stand.png');
-    scene.physics.world.enable(this);
-    scene.add.existing(this);
+import Prefab from './Prefab';
 
-    this.setPosition(this.width / 2, this.height / 2);
+class Player extends Prefab {
+  constructor({ scene, position }) {
+    super({
+      scene,
+      position,
+      sheet: 'characters',
+      sprite: 'survivor1_stand',
+    });
 
     this.wKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
     this.aKey = scene.input.keyboard.addKey(
