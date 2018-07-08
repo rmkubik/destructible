@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import fsm from './fsm';
+import Fsm from './fsm';
 
 class Mob extends Phaser.GameObjects.Sprite {
   constructor({ scene, position, sprite }) {
@@ -27,7 +27,7 @@ class Mob extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds(true);
     this.body.setBounce(1, 1);
 
-    this.state = fsm(
+    this.state = new Fsm(
       {
         unmoving: {
           wander: () => {},

@@ -10,20 +10,21 @@
  *  }
  */
 
-export default function fsm(states, initialState) {
-  this.currentState = initialState;
+class Fsm {
+  constructor(states, initialState) {
+    this.currentState = initialState;
+    this.states = states;
+  }
 
-  return {
-    action(action) {
-      if (states[this.currentState][action]) {
-        states[this.currentState][action]();
-      }
-    },
+  action(action) {
+    if (this.states[this.currentState][action]) {
+      this.states[this.currentState][action]();
+    }
+  }
 
-    transition(state) {
-      this.currentState = state;
-    },
-
-    currentState: this.currentState,
-  };
+  transition(state) {
+    this.currentState = state;
+  }
 }
+
+export default Fsm;
