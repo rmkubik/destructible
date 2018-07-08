@@ -41,7 +41,7 @@ class Game {
       runChildUpdate: true,
     });
 
-    this.char = new Player({ scene: this, position: { x: 0, y: 0 } });
+    this.player = new Player({ scene: this, position: { x: 0, y: 0 } });
 
     const mob = new Mob({
       scene: this,
