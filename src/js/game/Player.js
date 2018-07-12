@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 
 import Prefab from './Prefab';
+import Inventory from './Inventory';
 
 class Player extends Prefab {
   constructor({ scene, position }) {
@@ -29,6 +30,8 @@ class Player extends Prefab {
 
     this.direction = { x: 0, y: 0 };
     this.speed = 200;
+
+    this.inventory = new Inventory();
   }
 
   update() {

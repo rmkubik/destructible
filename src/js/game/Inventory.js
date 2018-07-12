@@ -1,6 +1,6 @@
 class Inventory {
   constructor() {
-    this.items = [];
+    this.items = [0, 1, 2, 3];
   }
 }
 
