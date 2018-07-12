@@ -15,6 +15,7 @@ const GameContainer = ({ state, actions }) => (
     }}
   >
     <GameComponent />
+    <Gui state={state} actions={actions} />
   </div>
 );
 
