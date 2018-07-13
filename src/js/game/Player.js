@@ -31,7 +31,7 @@ class Player extends Prefab {
     this.direction = { x: 0, y: 0 };
     this.speed = 200;
 
-    this.inventory = new Inventory();
+    this.inventory = new Inventory(scene.actions);
   }
 
   update() {

@@ -1,5 +1,6 @@
 class Inventory {
-  constructor() {
+  constructor(actions) {
+    // actions.addInventoryItem('a', 0);
     this.items = [0, 1, 2, 3];
   }
 }

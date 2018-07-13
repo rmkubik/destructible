@@ -8,10 +8,10 @@ const Gui = ({ state, actions }) => (
     <button onclick={() => actions.down(1)}>-</button>
     <button onclick={() => actions.up(1)}>+</button> */}
     <ul class="Inventory">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <li>{state.inventory.items[0]}</li>
+      <li>{state.inventory.items[1]}</li>
+      <li>{state.inventory.items[2]}</li>
+      <li>{state.inventory.items[3]}</li>
     </ul>
   </div>
 );
