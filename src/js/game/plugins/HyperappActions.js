@@ -6,10 +6,7 @@ class HyperappActions extends Phaser.Plugins.BasePlugin {
   constructor(pluginManager) {
     super(pluginManager);
 
-    // this.actions = actions;
-    Object.entries(actions).forEach(({ key, action }) => {
-      this[key] = action;
-    });
+    Object.assign(this, actions);
   }
 }
 
