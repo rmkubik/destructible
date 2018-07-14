@@ -25,6 +25,11 @@ class Player extends Prefab {
     scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
     scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
+    scene.input.keyboard.on('keydown_A', () =>
+      this.inventory.addItem(this.x, 0),
+    );
+    scene.input.keyboard.on('keydown_S', () => this.inventory.useItem(0));
+
     // scene.map.terrain.setCollision([204]);
     scene.physics.add.collider(this, scene.map.terrain);
 
