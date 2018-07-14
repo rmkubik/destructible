@@ -1,13 +1,11 @@
 import Phaser from 'phaser';
 
-import actions from '../../actions/actions';
+class HyperappActions extends Phaser.Plugins.BasePlugin {}
 
-class HyperappActions extends Phaser.Plugins.BasePlugin {
-  constructor(pluginManager) {
-    super(pluginManager);
+function HyperappActionsFactory(actions) {
+  Object.assign(HyperappActions.prototype, actions);
 
-    Object.assign(this, actions);
-  }
+  return HyperappActions;
 }
 
-export default HyperappActions;
+export default HyperappActionsFactory;

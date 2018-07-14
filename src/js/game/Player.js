@@ -28,10 +28,12 @@ class Player extends Prefab {
     // scene.map.terrain.setCollision([204]);
     scene.physics.add.collider(this, scene.map.terrain);
 
+    this.scene = scene;
+
     this.direction = { x: 0, y: 0 };
     this.speed = 200;
 
-    this.inventory = new Inventory(scene.actions);
+    this.inventory = new Inventory(scene);
   }
 
   update() {
@@ -70,6 +72,8 @@ class Player extends Prefab {
       { x: this.x, y: this.y },
       tileSize,
     );
+
+    this.scene.actions.addInventoryItem({ value: 'asdfafasdf', slot: 1 });
 
     map.terrain.putTileAt(
       204,

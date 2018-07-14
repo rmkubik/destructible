@@ -13,6 +13,7 @@ const Gui = ({ state, actions }) => (
       <li>{state.inventory.items[2]}</li>
       <li>{state.inventory.items[3]}</li>
     </ul>
+    <p>{JSON.stringify(state)}</p>
   </div>
 );
 

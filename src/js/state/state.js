@@ -1,5 +1,5 @@
 export default {
   inventory: {
-    items: [],
+    items: [0, 0, 0, 0],
   },
 };
