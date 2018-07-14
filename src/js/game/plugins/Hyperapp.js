@@ -8,7 +8,11 @@ export function HyperappActionsFactory(actions) {
   return HyperappActions;
 }
 
-class HyperappState extends Phaser.Plugins.BasePlugin {}
+class HyperappState extends Phaser.Plugins.BasePlugin {
+  update(state) {
+    Object.assign(this, state);
+  }
+}
 
 export function HyperappStateFactory(state) {
   Object.assign(HyperappState.prototype, state);
