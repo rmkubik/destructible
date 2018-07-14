@@ -1,6 +1,10 @@
 class Inventory {
   constructor(scene) {
-    this.items = [0, 1, 2, 3];
+    this.scene = scene;
+  }
+
+  addItem(item) {
+    this.scene.actions.addInventoryItem({ value: item, slot: 1 });
   }
 }
 
