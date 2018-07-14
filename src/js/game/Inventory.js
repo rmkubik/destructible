@@ -3,8 +3,8 @@ class Inventory {
     this.scene = scene;
   }
 
-  addItem(item) {
-    this.scene.actions.addInventoryItem({ value: item, slot: 1 });
+  addItem(item, slot) {
+    this.scene.actions.addInventoryItem({ item, slot });
   }
 }
 
