@@ -14,7 +14,7 @@ const GameContainer = ({ state, actions }) => (
       height: `${config.height}px`,
     }}
   >
-    <GameComponent actions={actions} />
+    <GameComponent state={state} actions={actions} />
     <Gui state={state} actions={actions} />
   </div>
 );

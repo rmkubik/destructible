@@ -4,11 +4,11 @@ import Game from '../game/Game';
 
 import '../../css/components/Game.scss';
 
-const GameComponent = ({ actions }) => (
+const GameComponent = ({ actions, state }) => (
   <div
     id="Game"
     oncreate={() => {
-      const game = new Game(actions);
+      const game = new Game(actions, state);
     }}
   />
 );

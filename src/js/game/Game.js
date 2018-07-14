@@ -4,7 +4,10 @@ import config from './Config';
 import Player from './Player';
 import Mob from './Mob';
 import Map from './Map';
-import HyperappActionsFactory from './plugins/HyperappActions';
+import {
+  HyperappActionsFactory,
+  HyperappStateFactory,
+} from './plugins/Hyperapp';
 
 import characters from '../../../assets/images/spritesheet_characters.png';
 import charactersAtlas from '../../../assets/images/spritesheet_characters.xml';
@@ -57,7 +60,7 @@ function create() {
 function update() {}
 
 class Game {
-  constructor(actions) {
+  constructor(actions, state) {
     this.game = new Phaser.Game({
       scene: {
         preload,
@@ -71,6 +74,12 @@ class Game {
             plugin: HyperappActionsFactory(actions),
             start: false,
             mapping: 'actions',
+          },
+          {
+            key: 'HyperappState',
+            plugin: HyperappStateFactory(state),
+            start: false,
+            mapping: 'state',
           },
         ],
       },
