@@ -1,6 +1,13 @@
+import Item from '../game/Item';
+
 export default {
   inventory: {
-    items: [0, 0, 0, 0],
+    items: [
+      new Item('wall'),
+      new Item('empty'),
+      new Item('empty'),
+      new Item('empty'),
+    ],
     selectedItemIndex: 0,
   },
 };
