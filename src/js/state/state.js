@@ -1,4 +1,4 @@
-import Item from '../game/Item';
+import Item from '../game/items/Item';
 
 export default {
   inventory: {
