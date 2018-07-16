@@ -1,10 +1,6 @@
-class Item {
-  constructor(type) {
-    this.type = type;
-  }
-
+export class Item {
   use() {
-    console.error(`Item "${this.type}" use function is not implemented`);
+    console.error("Item's use function is not implemented");
   }
 }
 
