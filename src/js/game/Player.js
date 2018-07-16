@@ -22,13 +22,12 @@ class Player extends Prefab {
     this.dKey = scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.RIGHT,
     );
-    scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
-    scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
+    // scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
+    // scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
-    scene.input.keyboard.on('keydown_A', () =>
-      this.inventory.addItem(this.x, 0),
-    );
-    scene.input.keyboard.on('keydown_S', () => this.inventory.useItem(0));
+    scene.input.keyboard.on('keydown_Q', () => this.inventory.useItem());
+    scene.input.keyboard.on('keydown_W', () => {});
+
     scene.input.keyboard.on('keydown_ONE', () => {
       this.inventory.selectItem(0);
     });
@@ -81,6 +80,7 @@ class Player extends Prefab {
     }
   }
 
+  // TODO: placeBlock, deleteBlock, and convertPixelsToTile should probably be map methods
   placeBlock(map) {
     const tileSize = 64;
     const currentTile = Prefab.convertPixelsToTile(
