@@ -52,10 +52,7 @@ class Mob extends Prefab {
 
   update() {
     const { player } = this.scene;
-    if (
-      Phaser.Math.Distance.Between(player.x, player.y, this.x, this.y) <=
-      this.followRadius
-    ) {
+    if (this.shouldFollowPlayer(player)) {
       this.state.action('playerNear');
     } else {
       this.state.action('stopFollow');
@@ -71,6 +68,13 @@ class Mob extends Prefab {
         }),
       );
     }
+  }
+
+  shouldFollowPlayer(player) {
+    return (
+      Phaser.Math.Distance.Between(player.x, player.y, this.x, this.y) <=
+      this.followRadius
+    );
   }
 
   stopAction() {
