@@ -3,6 +3,12 @@ class Inventory {
     this.scene = scene;
   }
 
+  getSelectedItem() {
+    return this.scene.state.inventory.items[
+      this.scene.state.inventory.selectedItemIndex
+    ];
+  }
+
   addItem(item, slot) {
     this.scene.actions.addInventoryItem({ item, slot });
   }
