@@ -7,10 +7,10 @@ class Inventory {
     this.scene.actions.addInventoryItem({ item, slot });
   }
 
-  useItem() {
+  useItem(user) {
     this.scene.state.inventory.items[
       this.scene.state.inventory.selectedItemIndex
-    ].use();
+    ].use(user, this.scene);
   }
 
   selectItem(slot) {

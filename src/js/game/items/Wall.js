@@ -1,8 +1,8 @@
-import { Item } from './Item';
+import Item from './Item';
 
 class Wall extends Item {
-  use() {
-    console.log('wall');
+  use(user, scene) {
+    user.placeBlock(scene.map);
   }
 }
 

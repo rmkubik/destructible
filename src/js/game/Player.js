@@ -25,7 +25,7 @@ class Player extends Prefab {
     // scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
     // scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
-    scene.input.keyboard.on('keydown_Q', () => this.inventory.useItem());
+    scene.input.keyboard.on('keydown_Q', () => this.inventory.useItem(this));
     scene.input.keyboard.on('keydown_W', () => {});
 
     scene.input.keyboard.on('keydown_ONE', () => {
