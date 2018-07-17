@@ -1,5 +1,9 @@
 .Inventory {
     .selected {
-        font-weight: bold;
+        border: 2px solid black;
+    }
+    li {
+        width: fit-content;
+        padding: 5px;
     }
 }
