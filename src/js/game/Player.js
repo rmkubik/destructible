@@ -80,6 +80,14 @@ class Player extends Prefab {
     }
   }
 
+  selectOrUseItem(slot) {
+    if (this.inventory.getSelectedItemIndex() === slot) {
+      this.inventory.useItem(this);
+    } else {
+      this.inventory.selectItem(slot);
+    }
+  }
+
   // TODO: placeBlock, deleteBlock, and convertPixelsToTile should probably be map methods
   placeBlock(map) {
     const tileSize = 64;
