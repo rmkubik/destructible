@@ -24,19 +24,7 @@ class Mob extends Prefab {
     this.state = new Fsm(
       {
         unmoving: {
-          wander: () => {
-            this.moveInDirection(Mob.pickRandomDirection());
-
-            scene.time.addEvent({
-              // pick random amount of time to wander
-              delay: Phaser.Math.RND.integerInRange(1000, 5000),
-              callback: () => {
-                // transition back to unmoving
-                this.state.action('stop');
-              },
-            });
-            this.state.transition('wandering');
-          },
+          wander: () => this.wander(scene),
           playerNear: this.playerNearAction.bind(this),
         },
         wandering: {
@@ -69,6 +57,20 @@ class Mob extends Prefab {
         }),
       );
     }
+  }
+
+  wander(scene) {
+    this.moveInDirection(Mob.pickRandomDirection());
+
+    scene.time.addEvent({
+      // pick random amount of time to wander
+      delay: Phaser.Math.RND.integerInRange(1000, 5000),
+      callback: () => {
+        // transition back to unmoving
+        this.state.action('stop');
+      },
+    });
+    this.state.transition('wandering');
   }
 
   shouldFollowPlayer(player) {
