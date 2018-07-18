@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 import config from './Config';
 import Player from './Player';
-import Mob from './Mob';
+import Mob from './mobs/Mob';
 import Map from './Map';
 import {
   HyperappActionsFactory,

@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
 
-import Fsm from './Fsm';
-import Prefab from './Prefab';
-import Corn from './items/Corn';
+import Fsm from '../Fsm';
+import Prefab from '../Prefab';
+import Corn from '../items/Corn';
 
 class Mob extends Prefab {
   constructor({ scene, position, sprite }) {
