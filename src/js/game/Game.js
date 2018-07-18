@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import config from './Config';
 import Player from './Player';
 import Mob from './mobs/Mob';
+import Cow from './mobs/Cow';
 import Map from './Map';
 import {
   HyperappActionsFactory,
@@ -45,11 +46,7 @@ function create() {
     position: { x: 400, y: 400 },
     sprite: 'goat',
   });
-  const mob2 = new Mob({
-    scene: this,
-    position: { x: 400, y: 400 },
-    sprite: 'cow',
-  });
+  const mob2 = new Cow({ scene: this, position: { x: 400, y: 400 } });
   const mob3 = new Mob({
     scene: this,
     position: { x: 400, y: 400 },
