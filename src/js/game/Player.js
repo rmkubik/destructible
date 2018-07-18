@@ -22,26 +22,11 @@ class Player extends Prefab {
     this.dKey = scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.RIGHT,
     );
-    // scene.input.keyboard.on('keydown_Q', () => this.placeBlock(scene.map));
-    // scene.input.keyboard.on('keydown_W', () => this.deleteBlock(scene.map));
 
     scene.input.keyboard.on('keydown_Q', () => this.selectOrUseItem(0));
     scene.input.keyboard.on('keydown_W', () => this.selectOrUseItem(1));
     scene.input.keyboard.on('keydown_E', () => this.selectOrUseItem(2));
     scene.input.keyboard.on('keydown_R', () => this.selectOrUseItem(3));
-
-    // scene.input.keyboard.on('keydown_ONE', () => {
-    //   this.inventory.selectItem(0);
-    // });
-    // scene.input.keyboard.on('keydown_TWO', () => {
-    //   this.inventory.selectItem(1);
-    // });
-    // scene.input.keyboard.on('keydown_THREE', () => {
-    //   this.inventory.selectItem(2);
-    // });
-    // scene.input.keyboard.on('keydown_FOUR', () => {
-    //   this.inventory.selectItem(3);
-    // });
 
     // scene.map.terrain.setCollision([204]);
     scene.physics.add.collider(this, scene.map.terrain);
