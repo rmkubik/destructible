@@ -2,8 +2,10 @@ import Phaser from 'phaser';
 
 import config from './Config';
 import Player from './Player';
-import Mob from './mobs/Mob';
 import Cow from './mobs/Cow';
+import Goat from './mobs/Goat';
+import Zebra from './mobs/Zebra';
+import Elephant from './mobs/Elephant';
 import Map from './Map';
 import {
   HyperappActionsFactory,
@@ -36,22 +38,10 @@ function create() {
 
   this.player = new Player({ scene: this, position: { x: 0, y: 0 } });
 
-  const mob = new Mob({
-    scene: this,
-    position: { x: 400, y: 400 },
-    sprite: 'zebra',
-  });
-  const mob1 = new Mob({
-    scene: this,
-    position: { x: 400, y: 400 },
-    sprite: 'goat',
-  });
+  const mob1 = new Zebra({ scene: this, position: { x: 400, y: 400 } });
   const mob2 = new Cow({ scene: this, position: { x: 400, y: 400 } });
-  const mob3 = new Mob({
-    scene: this,
-    position: { x: 400, y: 400 },
-    sprite: 'elephant',
-  });
+  const mob3 = new Goat({ scene: this, position: { x: 400, y: 400 } });
+  const mob4 = new Elephant({ scene: this, position: { x: 400, y: 400 } });
 }
 
 function update() {}
